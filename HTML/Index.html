@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olympic Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
+    <link rel="stylesheet" href="../CSS/index.css">
+    <link rel="stylesheet" href="../CSS/jquery-ui/jquery-ui.css">
+    <link rel="icon" href="../Images/sitelogo.avif" />
+</head>
+<body>
+    <div id="mainNavigation" style="padding: 0px;">
+        <nav role="navigation">
+            <div class="py-3 text-center border-bottom">
+            <img src="../Images/logo.svg" alt="" class="invert">
+            </div>
+        </nav>
+        <div class="navbar-expand-md">
+            <div class="navbar-dark text-center my-2">
+            <button class="navbar-toggler w-75" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span> <span class="align-middle">Menu</span>
+            </button>
+            </div>
+            <div class="text-center mt-3 collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="Index.html" style="color: #0081C8;">Home <i class="fa fa-home" aria-hidden="true"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="Atletas.html" >Atletas <i class="fa-regular fa-address-card"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Modalidades.html">Modalidades <i class="fa-regular fa-futbol"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Paises.html">Paí­ses <i class="fa-regular fa-flag"></i></i></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Outros
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li class="dropdown-li"><a class="dropdown-item" href="./Favoritos.html">Favoritos</a></li>
+                        <li class="dropdown-li"><a class="dropdown-item" href="./Mapa.html">Mapas</a></li>
+                        <li class="dropdown-li"><a class="dropdown-item" href="./Sugestoes.html">Sugestões</a></li>
+                        <li class="dropdown-li"><a class="dropdown-item" href="./Grafico.html">Gráficos</a></li>
+                    </ul>
+                </li>
+                <ul class="nav-item">
+                    <li class="nav-item d-flex"> 
+                        <input id="searchArgs" class="form-control me-2 btn-outline-secondary procura" type="text" placeholder="Search games" aria-label="Search" name="searchbar" >
+                        <button class="btn btn-outline-secondary fa fa-search" type="submit" id="search01" style="margin: 0 0 0 20px; border-style:none ;" ></button>
+                    </li>
+                </ul>
+            </ul>
+            </div>
+        </div>
+    </div>
+    <div class="carousel mb-4">
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4" class=""></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4" aria-label="Slide 5" class=""></button>
+
+            </div>
+            <div class="carousel-inner" >
+                <div class="carousel-item active" style="margin: 0px;">
+                    <img src="../Images/rio.jpg" width="100%" height="100%" class="d-block w-100 " style="object-fit: cover;" >
+                    <div class="container">
+                        <div class="carousel-caption text-start" >
+                            <h1 class="titulogrande">RIO 2016</h1>
+                            <p class="titulopequeno">Brazil</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../Images/2014.jpg"  width="100%" height="100%" class="d-block w-100 " style="object-fit: cover;">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1 class="titulogrande">Sochi 2014</h1>
+                            <p class="titulopequeno">Russia</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../Images/2012.jpg"  width="100%" height="100%" class="d-block w-100 " style="object-fit: cover;">        
+                    <div class="container">
+                        <div class="carousel-caption text" >
+                            <h1 class="titulogrande">Londres 2012</h1>
+                            <p class="titulopequeno">Inglaterra</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../Images/2010.jpg"  width="100%" height="100%" class="d-block w-100 " style="object-fit: cover;">        
+                    <div class="container">
+                        <div class="carousel-caption" >
+                            <h1 class="titulogrande">Vancouver 2010</h1>
+                            <p class="titulopequeno">Canada</p> 
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../Images/2008.jpg"  width="100%" height="100%" class="d-block w-100 " style="object-fit: cover;">        
+                    <div class="container">
+                        <div class="carousel-caption text-end" >
+                            <h1 class="titulogrande">Beijing 2008</h1>
+                            <p class="titulopequeno">China</p> 
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <div class="row px-5 mx-5" style="border-top:1px solid rgba(0, 0, 0, 0.24);">
+        <h1 class="titulogrande ml-5" style="padding-right: 10rem; font-size: 7rem;margin-left: 10rem;">JOGOS PASSADOS </h1>     
+    </div>
+    <table style="width: 100%;" id="table">
+        <tbody data-bind="foreach: records" style="color: #0081C8;border-bottom: 1px solid black;">
+            <tr class="titulopequeno table-index col-12" style="width: 100%; margin-left: 1rem;border-bottom: 1px solid rgba(0, 0, 0, 0.096); text-shadow: none" >
+                <td class="text-start" style="padding-left: 17rem;">
+                    <h1 data-bind="text:Name" style="font-size: 90%;"></h1>
+                </td>
+                <td class="col-1" >
+                    <h1 data-bind="text:CityName" style="font-size: 90%;"></h1>
+                </td>
+                <td style="padding-left:4rem ;">
+                    <img data-bind="attr: {src: Logo }" style="height: 6rem; width: 6rem;">
+                </td>
+                <td class="titulopequeno" data-bind="text:"></td>
+                <td class="text-end" style="padding-right: 5rem;">
+                    <button class="btn btn-default btn-xs mb-3" >
+                        <i class="fa fa-eye" title="Selecione para ver detalhes" style="font-size: 2.5rem;color: #0081C8;" data-bind="click: $parent.loadIdModal.bind($data, Id), clickBubble: false, attr: { 'data-bs-toggle': 'modal', 'data-bs-target': '#IdModal' }"></i>
+                    </button>
+                    <button data-bind="click: () => $parent.toggleFavourite(Id), attr : { 'id': 'favourite_' + Id }" id="heartbt" class="btn btn-favourite">
+                        <i style="font-size: 2.5rem;color: #0081C8; margin-bottom: 2.25vh;" data-bind="attr: {'class': $parent.favourites().includes(Id)? 'fa fa-heart' : 'fa-regular fa-heart primary'}" title="Selecione para adicionar aos favoritos"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <!--MODAL-->
+    <div id="IdModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="IdModal" aria-h idden="true">
+        <div class="modal-dialog modal-lg ">
+            <div class="modal-content" data-bind="with:IdData" style="background-color:#3997ca; color: whitesmoke; border-radius: 5%;">
+                <!--Modal preciso usar um container do bootstrap-->
+                <div class="container row px-4 py-4">
+                    <div class="col-12 row">
+                        <div class="col-10">
+                            <h1 class="titulopequeno" data-bind="text:Name" style="font-size: xxx-large;"></h1>                             
+                            <h1 class="titulopequeno" data-bind="text: CityName" style="font-size: xx-large;"></h1>                               
+                        </div>
+                        <img class="col-2 rating-img mt-2" data-bind="attr: {src: Logo }" />
+                    </div>
+                </div>
+                <div class="modal-img "  data-bind="style: { backgroundImage: 'url(' + Photo + ')' }" >
+                    <div class="col-6 button-container container-fluid row">
+                        <button data-bind="click: () => $parent.toggleFavourite(Id), attr : { 'id': 'favourite_' + Id }" id="heartbt" class="btn btn-favourite btn-outline-danger">
+                            <i style="font-size: 1.5rem; color: red;" data-bind="attr: {'class': $parent.favourites().includes(Id)? 'fa fa-heart danger' : 'fa-regular fa-heart danger'}" title="Selecione para adicionar aos favoritos"></i>
+                        </button>
+                    </div>
+                </div>
+
+                
+                <span class="info-heading ms-4 pt-3">Id do Jogo:
+                    <a data-bind="text: Id" style="font-weight: lighter;"></a>
+                </span>
+                
+                <span class="info-heading ms-4">Nome do Paí­s:
+                    <a data-bind="text: CountryName" style="font-weight: lighter;"></a>
+                </span>
+
+                <span class="info-heading ms-4 ">Latitude:
+                    <a data-bind="text: Lat" style="font-weight: lighter;"></a>
+                </span>
+
+                <span class="info-heading ms-4 pb-4">Longitude:
+                    <a data-bind="text: Lon" style="font-weight: lighter;"></a>
+                </span>
+            </div>
+        </div>
+
+
+
+    </div>
+    <!--/MODAL-->
+    
+     
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        <img src="../Images/logo.svg" height="30" /> Loading data...
+                    </h5>
+                </div>
+                <div class="modal-body text-center">
+                    <i class="fa fa-spin fa-3x fa-refresh"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+      
+
+
+    <nav class="navbar bottom" role="navigation">
+        <div class="container" style="font-size: large;">
+            <div class="navbar-text small" style="color:rgb(0, 0, 0)">&copy;ITW2022/23 - Introdução às Tecnologias Web</div>
+             <a class="btn  btn-floating m-1" href="https://www.facebook.com/olympics/" role="button">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a class="btn  btn-floating m-1" href="https://twitter.com/Olympics?s=20&t=Js6Hvn3cJlqz-KQFMScQUw" role="button">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a class="btn  btn-floating m-1" href="https://olympics.com/" role="button">
+                <i class="fa-brands fa-google"></i>
+            </a>
+            <a class="btn  btn-floating m-1" href="https://www.instagram.com/f1/" role="button">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a class="btn  btn-floating m-1" href="https://www.tiktok.com/@olympics" role="button">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+            <div class="navbar-right navbar-text small d-none d-md-block" ><a  style="color:rgb(0, 0, 0);text-decoration: none;" href="http://www.ua.pt/" title="Universidade de Aveiro">Universidade de Aveiro</a></div>
+        </div>
+    </nav>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js" integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.min.js" integrity="sha512-vs7+jbztHoMto5Yd/yinM4/y2DOkPLt0fATcN+j+G4ANY2z4faIzZIOMkpBmWdcxt+596FemCh9M18NUJTZwvw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js " integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA=" crossorigin=" anonymous "></script>
+    <script src="../JS/index.js"></script>
+    
+</body>
+</html>

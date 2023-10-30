@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Países Olímpicos</title>    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
+    <link rel="stylesheet" href="../CSS/olympic.css">
+    <link rel="stylesheet" href="../CSS/jquery-ui/jquery-uired.css">
+    <link rel="icon" href="../Images/sitelogo.avif" />
+</head>
+<body>
+    <div id="mainNavigation">
+        <nav role="navigation">
+            <div class="py-3 text-center border-bottom">
+            <img src="../Images/logo.svg" alt="" class="invert">
+            </div>
+        </nav>
+        <div class="navbar-expand-md">
+            <div class="navbar-dark text-center my-2">
+            <button class="navbar-toggler w-75" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span> <span class="align-middle">Menu</span>
+            </button>
+            </div>
+            <div class="text-center mt-3 collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mx-auto ">
+                <li class="nav-item">
+                    <a class="nav-link" href="Index.html">Home <i class="fa fa-home" aria-hidden="true"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Atletas.html">Atletas <i class="fa-regular fa-address-card"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Modalidades.html">Modalidades <i class="fa-regular fa-futbol"></i></a>
+                </li>
+                <li class="nav-item" >
+                    <a class="nav-link active" href="Paises.html" style="color:#EE334E;">Países <i class="fa-regular fa-flag"></i></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Outros
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li class="dropdown-li"><a class="dropdown-item" href="./Favoritos.html">Favoritos</a></li>
+                        <li class="dropdown-li"><a class="dropdown-item" href="./Mapa.html">Mapas</a></li>
+                        <li class="dropdown-li"><a class="dropdown-item" href="./Sugestoes.html">Sugestões</a></li>
+                        <li class="dropdown-li"><a class="dropdown-item" href="./Grafico.html">Gráficos</a></li>
+                    </ul>
+                </li>
+                <ul class="nav-item ">
+                    <li class="nav-item d-flex"> 
+                        <input id="searchArgs" class="form-control me-2 btn-outline-secondary procura" type="text" placeholder="Search" aria-label="Search" >                
+                        <button class="btn btn-outline-secondary" id="searchbar1" type="submit" style="margin: 0 0 0 20px; border-style:none ;" onclick="search()"><i class="fa fa-search" aria-hidden="true" style="color: rgb(0, 0, 0);"></i></button>
+                    </li>
+                </ul>
+            </ul>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <div class="container mt-5 borber border-top primary text-center pe-0">      
+        
+        <!-- ko if:records().length > 0 -->
+        <div class="row small pe-0">
+            <p class=" col-4 mr-auto pt-2" style="text-align: start;padding-left: 3rem;">
+                <span data-bind="html: 'Page: ' + currentPage() + ' of ' + totalPages()"></span><br />
+                Countries<span data-bind="html: ': '+ fromRecord() + '-' + toRecord() + ' of ' + totalRecords()"></span>
+            </p>
+            <div class="col-8 my-0 pt-3 pe-0 ms-5 ps-5">
+                <ul class="pagination float-end">
+                    <!-- ko if: currentPage() > 5 && totalPages() > 10 -->
+                    <li class="page-item float-end"><a class="page-link" title="First Page" data-bind="attr: { href: './Paises.html?page=' + '1',  rel:'prev'}">⇤</a></li>
+                    <li class="page-item float-end"><a class="page-link" title="Previous Page" data-bind="attr: { href: './Paises.html?page=' + previousPage(),  rel:'prev'}">←</a></li>
+                    <!-- /ko -->
+                    <!-- ko foreach: pageArray()-->
+                    <!-- ko if:$data == $parent.currentPage() -->
+                    <li class="active page-item"><a class="page-link" data-bind="attr: { title:'Current Page ' + $data }, text: $data"></a></li>
+                    <!-- /ko -->
+                    <!-- ko if:$data != $parent.currentPage() -->
+                    <li class="page-item"><a class="page-link" data-bind="attr: { href: './Paises.html?page=' + $data, title:'Goto Page ' + $data }, text:$data"></a></li>
+                    <!-- /ko -->
+                    <!-- /ko -->
+                    <!-- ko if: currentPage() < totalPages() - 4 && totalPages() > 9 -->
+                    <li class="page-item"><a class="page-link" title="Next Page" data-bind="attr: { href: './Paises.html?page=' + nextPage(), rel:'next' }">→</a></li>
+                    <li class="page-item"><a class="page-link" title="Last Page" data-bind="attr: { href: './Paises.html?page=' + totalPages() }">⇥</a></li>
+                    <!-- /ko -->
+                </ul>
+            </div>
+        </div>
+        <!-- /ko -->  
+
+
+        <div id="country-cards">
+            <div data-bind="foreach: records" class="row" style="text-align: center; text-align: center; justify-content: center; display: flex;" >
+                <div id= "country-card" class="country-card card py-3 px-3" style="width: 18rem ;border-radius: 1rem;">
+                    <div class="container mb-2" style="height:10rem;">
+                        <img data-bind="attr: {src: Flag }" class="card-img-top" alt="../Images/" style="max-height: fit-content;height: 10rem; border-radius: 1.5rem;"></div>
+                    <div class="card-body pt-0 text-center">
+                        <h5 class="card-title" id="nome" data-bind="text: Name"></h5>
+                        <h6 class="card-subtitle mb-4 text-muted" id="ioc" data-bind="text: IOC"></h6>
+                        <h6 class="card-subtitle mb-4 text-muted" id="id" data-bind="text:Id"></h6>
+                        <div class="row">
+                            <div class="col-6">
+                                <a class="btnpais btn" title="Cique para ver mais" data-bind="attr: { href:'./paisesDetails.html?id=' + Id }">
+                                    <i class="far fa-eye" style="font-size: x-large;"></i>
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <button data-bind="click: () => $parent.toggleFavourite(Id), attr : { 'id': 'favourite_' + Id }" id="heartbt" class="btn btn-favourite">
+                                    <i style="font-size: x-large;" data-bind="attr: {'class': $parent.favourites().includes(Id)? 'fa fa-heart text-danger' : 'fa-regular fa-heart'}" title="Selecione para adicionar aos favoritos"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        <img src="../Images/logo.svg" height="30" /> A carregar países...
+                    </h5>
+                </div>
+                <div class="modal-body text-center">
+                    <i class="fa fa-spin fa-3x fa-refresh"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Modal --> 
+
+
+    <nav class="navbar bottom" role="navigation">
+        <div class="container" style="font-size: large;">
+            <div class="navbar-text small" style="color:rgb(0, 0, 0)">&copy;ITW2022/23 - Introdução às Tecnologias Web</div>
+             <a class="btn  btn-floating m-1" href="https://www.facebook.com/olympics/" role="button">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a class="btn  btn-floating m-1" href="https://twitter.com/Olympics?s=20&t=Js6Hvn3cJlqz-KQFMScQUw" role="button">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a class="btn  btn-floating m-1" href="https://olympics.com/" role="button">
+                <i class="fa-brands fa-google"></i>
+            </a>
+            <a class="btn  btn-floating m-1" href="https://www.instagram.com/f1/" role="button">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a class="btn  btn-floating m-1" href="https://www.tiktok.com/@olympics" role="button">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+            <div class="navbar-right navbar-text small d-none d-md-block" ><a  style="color:rgb(0, 0, 0);text-decoration: none;" href="http://www.ua.pt/" title="Universidade de Aveiro">Universidade de Aveiro</a></div>
+        </div>
+    </nav>
+
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js" integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.min.js" integrity="sha512-vs7+jbztHoMto5Yd/yinM4/y2DOkPLt0fATcN+j+G4ANY2z4faIzZIOMkpBmWdcxt+596FemCh9M18NUJTZwvw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js " integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA=" crossorigin=" anonymous "></script>
+    <script src="../JS/paises.js"></script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+/*Navbar*/
+#mainNavigation a {
+    font-family: "Open Sans",sans-serif;
+    font-size:14px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    text-shadow:1px 1px 2px rgba(0,0,0,0.4)
+}
+   
+.dropdown-menu {
+    background: white
+}
+
+a.dropdown-toggle {
+    color:#000000 !important
+}
+
+a.dropdown-item:hover {
+    font-weight: bold;
+}
+
+.nav-item a{
+    color:#000000;
+}
+
+.nav-item a:hover {
+    font-weight: bold;
+    color: black;
+}
+
+.nav-item{
+    min-width:12vw;
+}
+
+#mainNavigation {
+    top:0;
+    left:0;
+    width:100%;
+    z-index:123;
+}
+
+#navbarNavDropdown.collapsing .navbar-nav,
+  #navbarNavDropdown.show .navbar-nav{
+    background:#037582;
+    padding:12px;
+  }
+
+.form-control::placeholder{ 
+    color:rgb(0, 0, 0);
+    opacity: 1; 
+}
+
+.dropdow-li{
+    padding: none;
+    margin: none; 
+}
+
+
+/*Cards*/  
+.card {
+    background: rgb(255, 255, 255);
+    border: 1px solid #000000;
+    color: rgba(42, 40, 40, 0.8);
+    margin: 1.2rem;   
+}
+
+.card:hover {
+    border: 3px solid #000000;
+    font-weight: bold;
+}
+
+.card:hover .card-title {
+    font-weight: bold;
+}
+  
+.card:hover .card-subtitle {
+    font-weight: bold;
+}
+
+.card:hover .btn{
+    font-weight: bold;
+}
+
+
+/*Table*/
+  
+.table-row {
+    border-radius: 3px;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.table-header {
+    background-color: #858585;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    border-radius: 3px;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.table-header:hover {
+    background-color: #535353;
+    font-weight: bold;
+}
+
+
+.table-row {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);      
+}
+
+.col-1 {
+    flex-basis: 10%;
+}
+.col-2 {
+    flex-basis: 40%;
+}
+.col-3 {
+    flex-basis: 25%;
+}
+.col-4 {
+    flex-basis: 25%;
+}
+
+.table-row:hover{
+    background-color: #cfcfcf;
+    font-weight: bold;
+}
+    
+@media (max-width: 767px) {
+    .table-header {
+    display: none;
+    }
+
+    li {
+        display: block;
+    }
+    .col {
+        flex-basis: 100%;
+    }
+    .col {
+        display: flex;
+        padding: 10px 0;
+    }
+
+    :before {
+        color: #6C7A89;
+        padding-right: 10px;
+        content: attr(data-label);
+        flex-basis: 50%;
+        text-align: right;
+    }
+      
+}
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+                    transition: 0.4s;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .accordion:hover {
+    background-color: #ccc;
+  }
+  
+  /* Style the accordion panel */
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+  }
+
+/*Resto*/
+.titulogrande{
+    font-family:"SugarSnow", sans-serif;
+    font-weight: 5000px;
+    font-size: 10rem;
+    text-shadow:1px 1px 2px rgba(0,0,0,0.4)
+
+}
+
+@font-face {
+    font-family:"SugarSnow";
+    src: url(../Fonts/SugarSnow.otf) format(truetype);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family:"Open Sans", sans-serif;
+    src: url(../Fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf) format(truetype);
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.titulopequeno{
+    font-family:"SugarSnow", sans-serif;
+    font-weight: 500px;
+    font-size: xx-large;
+
+}
+
+.margem{
+    margin-top: 25vh;
+}
+
+.fa-heart:hover{
+    color: #EE334E;
+    
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family: "Open Sans",sans-serif;
+  }
+
+
+.col{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+      
+}
+
+.procura{
+
+    border: rgb(0, 0, 0);
+    border-style: solid;
+    border-width: 1px;
+    background-color:rgba(0,0,0,0);
+    text-shadow:1px 1px 2px rgba(0,0,0,0.4);
+    font-family: 'Cabin', sans-serif;
+    font-size:14px;
+    letter-spacing:2px;
+    color: rgb(0, 0, 0);
+    
+}
+

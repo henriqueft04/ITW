@@ -1,5 +1,12 @@
 # Projet de ITW sobre Jogos Olímpicos
 
-Henrique Teixeira
+## Evaluation
+16/20
 
-João Roldão
+## Authors
+* [Henrique Teixeira] - [@henriqueft04]
+* [João Roldão] - [@JohnnyBoiR04]
+
+---
+
+Universidade de Aveiro, Ano letivo 2022/2023
